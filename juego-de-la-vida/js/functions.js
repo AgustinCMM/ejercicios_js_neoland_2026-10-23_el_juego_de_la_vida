@@ -23,24 +23,35 @@ export function generarCelulas(filas = 20, columnas = 30, porcentajeVivas = 50) 
 //Función para mostrar en pantalla todas las células agregándolas a el contenedor de la matriz según su estado (viva o muerta)
 export function dibujarCelulas(totalCelulas, matriz) {
     const fragmento = document.createDocumentFragment();
-    let nuevoEstado = []
 
     totalCelulas.forEach((fila, indiceFila) => {
-        nuevoEstado[indiceFila] = [];
         fila.forEach((estadoVivo, indiceColumna) => {
-            nuevoEstado[indiceFila][indiceColumna] = [];
             const celula = document.createElement("div");
             celula.className = estadoVivo ? "celula viva" : "celula muerta";
             celula.id = `c-${indiceFila}-${indiceColumna}`;
+            celula.dataset.fila = indiceFila;
+            celula.dataset.columna = indiceColumna;
 
             fragmento.appendChild(celula);
-
-            let vecinasVivas = evaluarVecinas(totalCelulas, indiceFila, indiceColumna);
-            nuevoEstado[indiceFila][indiceColumna] = evaluarCondiciones(estadoVivo, vecinasVivas);
         });
     });
+
     matriz.replaceChildren(fragmento);
-    return nuevoEstado;
+}
+
+//Función para calcular el estado de la siguiente generación
+export function calcularSiguienteGeneracion(celulas) {
+    return celulas.map((fila, indiceFila) => (
+        fila.map((estadoVivo, indiceColumna) => {
+            const vecinasVivas = evaluarVecinas(
+                celulas,
+                indiceFila,
+                indiceColumna
+            );
+
+            return evaluarCondiciones(estadoVivo, vecinasVivas);
+        })
+    ));
 }
 
 export function generarTableroConfigurado(
@@ -54,7 +65,8 @@ export function generarTableroConfigurado(
     const porcentajeVivas = Number(inputPorcentajeVivas.value);
     const celulas = generarCelulas(filas, columnas, porcentajeVivas);
 
-    return dibujarCelulas(celulas, matriz);
+    dibujarCelulas(celulas, matriz);
+    return celulas;
 }
 
 export function sincronizarNumerosConRangos(

@@ -3,6 +3,7 @@ import {
   normalizarNumeroYRango,
   sincronizarNumerosConRangos,
   sincronizarRangoDesdeNumero,
+  calcularSiguienteGeneracion,
   dibujarCelulas,
   generarTableroConfigurado
 } from "./functions.js";
@@ -45,6 +46,76 @@ export function inicializarApp() {
     );
 
     let intervalo = null;
+    let arrastrando = false;
+    let ultimaCelulaPintada = null;
+
+    const alternarCelula = (celula) => {
+        const indiceFila = Number(celula.dataset.fila);
+        const indiceColumna = Number(celula.dataset.columna);
+
+        if (
+            !Number.isInteger(indiceFila) ||
+            !Number.isInteger(indiceColumna) ||
+            typeof celulas[indiceFila]?.[indiceColumna] !== "boolean"
+        ) {
+            return;
+        }
+
+        const nuevoEstado = !celulas[indiceFila][indiceColumna];
+        celulas[indiceFila][indiceColumna] = nuevoEstado;
+        celula.classList.toggle("viva", nuevoEstado);
+        celula.classList.toggle("muerta", !nuevoEstado);
+    };
+
+    matriz.addEventListener("pointerdown", (event) => {
+        if (event.button !== 0) return;
+
+        const celula = event.target.closest(".celula");
+
+        if (!celula) return;
+
+        arrastrando = true;
+        ultimaCelulaPintada = celula.id;
+        alternarCelula(celula);
+    });
+
+    matriz.addEventListener("pointerover", (event) => {
+        if (!arrastrando || !(event.buttons & 1)) return;
+
+        const celula = event.target.closest(".celula");
+
+        if (!celula || celula.id === ultimaCelulaPintada) return;
+
+        ultimaCelulaPintada = celula.id;
+        alternarCelula(celula);
+    });
+
+    window.addEventListener("pointermove", (event) => {
+        if (!arrastrando) return;
+
+        if (!(event.buttons & 1)) {
+            arrastrando = false;
+            ultimaCelulaPintada = null;
+            return;
+        }
+
+        const celula = event.target instanceof Element
+            ? event.target.closest(".celula")
+            : null;
+
+        if (!celula || !matriz.contains(celula)) {
+            ultimaCelulaPintada = null;
+        }
+    });
+
+    const finalizarDibujo = () => {
+        arrastrando = false;
+        ultimaCelulaPintada = null;
+    };
+
+    window.addEventListener("pointerup", finalizarDibujo);
+    window.addEventListener("pointercancel", finalizarDibujo);
+    window.addEventListener("blur", finalizarDibujo);
 
     const aplicarConfiguracion = () => {
         if (intervalo !== null) {
@@ -81,7 +152,8 @@ export function inicializarApp() {
         if (intervalo !== null) return;
 
         intervalo = setInterval(() => {
-            celulas = dibujarCelulas(celulas, matriz);
+            celulas = calcularSiguienteGeneracion(celulas);
+            dibujarCelulas(celulas, matriz);
         }, 100);
     });
 

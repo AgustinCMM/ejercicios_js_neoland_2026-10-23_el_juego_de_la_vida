@@ -213,7 +213,13 @@
   border: 0;
   border-radius: 0;
   background: #000000;
+  cursor: pointer;
   transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.matriz-celulas > .celula:hover {
+  outline: 1px solid #ffffff;
+  outline-offset: -1px;
 }
 
 .matriz-celulas > .celula.viva {
