@@ -86,6 +86,71 @@
             role="img"
             aria-label="Matriz de células"
           ></div>
+          <section class="life-settings" aria-labelledby="life-settings-title">
+            <div class="life-settings__heading">
+              <h4 id="life-settings-title">Configuración del tablero</h4>
+              <p>Elige las dimensiones y el porcentaje inicial de células vivas.</p>
+            </div>
+            <div class="life-settings__grid">
+              <div class="life-setting">
+                <div class="life-setting__label-row">
+                  <label for="cambiar-filas">Filas</label>
+                  <output id="filas-valor" for="cambiar-filas">20</output>
+                </div>
+                <input
+                  type="range"
+                  id="cambiar-filas"
+                  name="filas"
+                  min="1"
+                  max="50"
+                  step="1"
+                  value="20"
+                >
+                <div class="life-setting__limits" aria-hidden="true">
+                  <span>1</span>
+                  <span>50</span>
+                </div>
+              </div>
+              <div class="life-setting">
+                <div class="life-setting__label-row">
+                  <label for="cambiar-columnas">Columnas</label>
+                  <output id="columnas-valor" for="cambiar-columnas">30</output>
+                </div>
+                <input
+                  type="range"
+                  id="cambiar-columnas"
+                  name="columnas"
+                  min="1"
+                  max="50"
+                  step="1"
+                  value="30"
+                >
+                <div class="life-setting__limits" aria-hidden="true">
+                  <span>1</span>
+                  <span>50</span>
+                </div>
+              </div>
+              <div class="life-setting">
+                <div class="life-setting__label-row">
+                  <label for="porcentaje-vivas">Células vivas</label>
+                  <output id="porcentaje-vivas-valor" for="porcentaje-vivas">50%</output>
+                </div>
+                <input
+                  type="range"
+                  id="porcentaje-vivas"
+                  name="porcentaje-vivas"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value="50"
+                >
+                <div class="life-setting__limits" aria-hidden="true">
+                  <span>0%</span>
+                  <span>100%</span>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </section>

@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "states": {
+    "ejercicio-contador-de-vocales": false,
+    "ejercicio-generador-de-cajas": false,
+    "ejercicio-filtro-de-precios": false,
+    "ejercicio-modo-oscuro-modular": false,
+    "ejercicio-palindromo-checker": false,
+    "ejercicio-fizzbuzz-visual": false,
+    "ejercicio-calculadora-basica-con-select": false,
+    "ejercicio-inversor-de-nombres": false,
+    "ejercicio-tabla-de-multiplicar-dinamica": false,
+    "ejercicio-capitalizador-de-palabras": false,
+    "ejercicio-11": false,
+    "ejercicio-12": false,
+    "ejercicio-13": false,
+    "ejercicio-14": false,
+    "ejercicio-15": false,
+    "ejercicio-16": false,
+    "ejercicio-17": false,
+    "ejercicio-18": false,
+    "ejercicio-19": false,
+    "ejercicio-20": false,
+    "juego-de-la-vida": true
+  }
+}

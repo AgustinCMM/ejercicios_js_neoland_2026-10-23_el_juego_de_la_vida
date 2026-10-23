@@ -67,6 +67,80 @@
   background: var(--surface-soft);
 }
 
+.life-settings {
+  display: grid;
+  gap: 15px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.life-settings__heading h4 {
+  margin: 0 0 3px;
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.life-settings__heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.79rem;
+}
+
+.life-settings__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.life-setting {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+}
+
+.life-setting__label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.life-setting__label-row label {
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.life-setting__label-row output {
+  min-width: 42px;
+  padding: 2px 8px;
+  border: 1px solid #cbd9ea;
+  border-radius: 7px;
+  background: #f1f6fc;
+  color: var(--blue-deep);
+  font-size: 0.77rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.life-setting input[type="range"] {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+.life-setting__limits {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1;
+}
+
 .life-board-viewport {
   display: grid;
   align-content: start;
@@ -130,6 +204,10 @@
   .life-toolbar {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .life-settings__grid {
+    grid-template-columns: 1fr;
   }
 
   .life-controls {
