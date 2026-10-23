@@ -20,6 +20,15 @@ export function inicializarApp() {
 
     intervalo = setInterval(() => {
         celulas = dibujarCelulas(celulas, matriz);
-    }, 500);
+    }, 100);
+    });
+
+    btnReiniciar.addEventListener('click', ()=> {
+        if (intervalo !== null) {
+            clearInterval(intervalo);
+            intervalo = null;
+        }
+        celulas = generarCelulas();
+        celulas = dibujarCelulas(celulas, matriz);
     });
 }
