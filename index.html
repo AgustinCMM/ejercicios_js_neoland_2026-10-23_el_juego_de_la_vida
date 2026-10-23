@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf4fc">
+  <title>Repaso JS · El Juego de la Vida</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true">JS</span>
+        Repaso de JavaScript
+      </a>
+      <span class="course-tag">Clase 9 · Repaso JS</span>
+    </nav>
+  </header>
+
+  <main class="container home-page">
+    <section class="intro-block" aria-labelledby="page-title">
+      <p class="eyebrow">Entorno de práctica</p>
+      <h1 id="page-title">
+        El Juego de la Vida
+        <span>y otros ejercicios de JavaScript</span>
+      </h1>
+      <p class="intro-copy">
+        Consignas de repaso organizadas en torno al ejercicio final de Conway, con páginas
+        independientes para preparar cada solución.
+      </p>
+      <a class="primary-action" href="juego-de-la-vida/index.html">
+        Abrir el ejercicio principal
+        <span aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <section class="featured-section" aria-labelledby="featured-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Sin numeración · proyecto final</p>
+          <h2 id="featured-title">Ejercicio principal</h2>
+        </div>
+      </div>
+      <div class="featured-grid">
+        <a
+          class="exercise-card exercise-card--featured"
+          data-exercise-card
+          data-exercise-id="juego-de-la-vida"
+          href="juego-de-la-vida/index.html"
+        >
+          <span class="exercise-card__top">
+            <span class="card-category">Ejercicio principal</span>
+            <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+          </span>
+          <span class="exercise-card__title">💀 FINAL BOSS: El Juego de la Vida (Conway's Game of Life)</span>
+          <span class="exercise-card__action">
+            Abrir consigna
+            <span aria-hidden="true">↗</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="other-exercises" id="otros-ejercicios" aria-labelledby="others-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">En el orden del documento</p>
+          <h2 id="others-title">Otros ejercicios</h2>
+        </div>
+      </div>
+
+      <section class="exercise-group" aria-labelledby="practical-title">
+        <div class="group-heading">
+          <p class="group-kicker">Parte 1:</p>
+          <h3 id="practical-title">Desarrollo Práctico (Crea la Solución)</h3>
+        </div>
+        <div class="exercise-grid">
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-contador-de-vocales"
+            href="ejercicio-1/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">1.</span>
+              <span class="card-category">Desarrollo práctico</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">El Contador de Vocales</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-generador-de-cajas"
+            href="ejercicio-2/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">2.</span>
+              <span class="card-category">Desarrollo práctico</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Generador de Cajas</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-filtro-de-precios"
+            href="ejercicio-3/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">3.</span>
+              <span class="card-category">Desarrollo práctico</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Filtro de Precios</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-modo-oscuro-modular"
+            href="ejercicio-4/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">4.</span>
+              <span class="card-category">Desarrollo práctico</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Modo Oscuro Modular</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-palindromo-checker"
+            href="ejercicio-5/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">5.</span>
+              <span class="card-category">Desarrollo práctico</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Palíndromo Checker</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-fizzbuzz-visual"
+            href="ejercicio-6/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">6.</span>
+              <span class="card-category">Desarrollo práctico</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">FizzBuzz Visual</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-calculadora-basica-con-select"
+            href="ejercicio-7/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">7.</span>
+              <span class="card-category">Desarrollo práctico</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Calculadora Básica con Select</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-inversor-de-nombres"
+            href="ejercicio-8/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">8.</span>
+              <span class="card-category">Desarrollo práctico</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Inversor de Nombres</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-tabla-de-multiplicar-dinamica"
+            href="ejercicio-9/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">9.</span>
+              <span class="card-category">Desarrollo práctico</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Tabla de Multiplicar Dinámica</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-capitalizador-de-palabras"
+            href="ejercicio-10/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">10.</span>
+              <span class="card-category">Desarrollo práctico</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Capitalizador de Palabras</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <section class="exercise-group" aria-labelledby="analysis-title">
+        <div class="group-heading">
+          <p class="group-kicker">Parte 2:</p>
+          <h3 id="analysis-title">Análisis de Código (Lee, Explica y Corrige)</h3>
+        </div>
+        <div class="exercise-grid">
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-11"
+            href="ejercicio-11/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">11.</span>
+              <span class="card-category">Análisis de código</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">El ciclo eterno</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-12"
+            href="ejercicio-12/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">12.</span>
+              <span class="card-category">Análisis de código</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">El mapa sin ruta</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-13"
+            href="ejercicio-13/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">13.</span>
+              <span class="card-category">Análisis de código</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">DOM destructivo</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-14"
+            href="ejercicio-14/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">14.</span>
+              <span class="card-category">Análisis de código</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Exportaciones misteriosas</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-15"
+            href="ejercicio-15/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">15.</span>
+              <span class="card-category">Análisis de código</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">La inmutabilidad ignorada</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-16"
+            href="ejercicio-16/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">16.</span>
+              <span class="card-category">Análisis de código</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Reemplazo fallido</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-17"
+            href="ejercicio-17/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">17.</span>
+              <span class="card-category">Análisis de código</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Alcance (Scope) traicionero</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-18"
+            href="ejercicio-18/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">18.</span>
+              <span class="card-category">Análisis de código</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Do-While engañoso</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-19"
+            href="ejercicio-19/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">19.</span>
+              <span class="card-category">Análisis de código</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Arrow functions y eventos</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+          <a
+            class="exercise-card"
+            data-exercise-card
+            data-exercise-id="ejercicio-20"
+            href="ejercicio-20/index.html"
+          >
+            <span class="exercise-card__top">
+              <span class="exercise-number">20.</span>
+              <span class="card-category">Análisis de código</span>
+              <span class="status-pill" data-exercise-status data-state="pending">Pendiente</span>
+            </span>
+            <span class="exercise-card__title">Retorno en un forEach</span>
+            <span class="exercise-card__action">
+              Abrir consigna
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <details class="progress-tools">
+      <summary>Transferir progreso</summary>
+      <div class="progress-tools__content">
+        <p>Exporta o importa los estados pendiente/resuelto de todos los ejercicios.</p>
+        <div class="progress-actions">
+          <button class="secondary-button" type="button" data-export-progress>Exportar JSON</button>
+          <label class="file-button">Importar JSON<input type="file" accept="application/json,.json" data-import-progress></label>
+        </div>
+        <p class="status-message" data-progress-message role="status" aria-live="polite"></p>
+        <p class="storage-message" data-storage-status role="status" aria-live="polite"></p>
+      </div>
+    </details>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Repaso JS</span>
+      <a href="#page-title">Volver al inicio ↑</a>
+    </div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

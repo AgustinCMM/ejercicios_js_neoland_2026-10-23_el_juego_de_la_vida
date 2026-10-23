@@ -1,0 +1,141 @@
+.life-results {
+  display: grid;
+  min-height: 0;
+  align-content: start;
+  gap: 18px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.life-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.life-toolbar h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.life-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.life-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 680;
+  transition: background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.life-button:hover {
+  transform: translateY(-1px);
+}
+
+.life-button--primary {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.life-button--primary:hover {
+  border-color: var(--blue-deep);
+  background: var(--blue-deep);
+}
+
+.life-button--secondary {
+  border-color: var(--line);
+  background: var(--surface);
+  color: var(--blue-deep);
+}
+
+.life-button--secondary:hover {
+  background: var(--surface-soft);
+}
+
+.life-board-viewport {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  max-width: 100%;
+  max-height: min(72vh, 720px);
+  overflow: auto;
+  padding: clamp(12px, 2.5vw, 20px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f1f6fc;
+}
+
+.matriz-celulas {
+  --tamaño-celda: clamp(12px, 2vw, 24px);
+  --separación-celda: 2px;
+  --filas: 20;
+  --columnas: 20;
+  display: grid;
+  grid-template-columns: repeat(var(--columnas), var(--tamaño-celda));
+  grid-template-rows: repeat(var(--filas), var(--tamaño-celda));
+  gap: var(--separación-celda);
+  width: max-content;
+  margin-inline: auto;
+  padding: var(--separación-celda);
+  border: 1px solid #cbd9ea;
+  border-radius: 0px;
+  background-color: #d8e4f2;
+}
+
+.matriz-celulas[class*="matriz-celulas--"] {
+  grid-template-columns: repeat(var(--columnas), var(--tamaño-celda));
+  grid-template-rows: repeat(var(--filas), var(--tamaño-celda));
+}
+
+.matriz-celulas:empty {
+  background-color: #ffffff;
+  background-size: var(--tamaño-celda) var(--tamaño-celda);
+}
+
+.matriz-celulas > .celula {
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid #c5d4e6;
+  border-radius: 3px;
+  background: #ffffff;
+  transition: background-color 120ms ease, border-color 120ms ease;
+}
+
+.matriz-celulas > .celula.viva {
+  border-color: var(--blue-deep);
+  background: var(--blue);
+}
+
+.matriz-celulas > .celula.muerta {
+  background: #000000;
+}
+
+@media (max-width: 540px) {
+  .life-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .life-controls {
+    width: 100%;
+  }
+
+  .life-button {
+    flex: 1;
+  }
+}

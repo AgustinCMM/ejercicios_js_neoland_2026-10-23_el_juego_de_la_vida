@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#edf4fc">
+  <title>💀 FINAL BOSS: El Juego de la Vida (Conway's Game of Life) · Repaso JS</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav container" aria-label="Navegación principal">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true">JS</span>
+        Repaso de JavaScript
+      </a>
+      <a class="course-tag" href="../index.html#otros-ejercicios">Índice de ejercicios</a>
+    </nav>
+  </header>
+
+  <main class="container exercise-page" data-exercise-id="juego-de-la-vida">
+    <nav class="breadcrumbs" aria-label="Migas de pan">
+      <a href="../index.html">Inicio</a>
+      <span aria-hidden="true">/</span>
+      <span aria-current="page">💀 FINAL BOSS: El Juego de la Vida (Conway's Game of Life)</span>
+    </nav>
+
+    <header class="exercise-heading">
+      <p class="eyebrow">Ejercicio principal · sin numeración</p>
+      <h1>💀 FINAL BOSS: El Juego de la Vida (Conway's Game of Life)</h1>
+      <label class="progress-control">
+        <input type="checkbox" data-progress-toggle>
+        Marcar como resuelto
+        <span class="current-status" data-current-status data-state="pending">Pendiente</span>
+      </label>
+      <p class="storage-note" data-storage-status role="status" aria-live="polite"></p>
+    </header>
+
+    <section class="content-panel" aria-labelledby="prompt-title">
+      <h2 id="prompt-title">Consigna</h2>
+      <div class="prompt-content">
+        <p>
+          Se requiere aplicar todo el conocimiento de manipulación de arreglos (matrices
+          bi-dimensionales), ciclos anidados, DOM dinámico y operadores matemáticos lógicos.
+        </p>
+        <p>
+          Reglas del juego: El universo es una cuadrícula bidimensional de células cuadradas (creada en
+          HTML/CSS mediante JS), donde cada célula puede estar en uno de dos estados: VIVA (con color) o
+          MUERTA (vacía). En cada &quot;turno&quot; o &quot;generación&quot;, el tablero se actualiza
+          basado en las siguientes reglas que ocurren al mismo tiempo para todas las células:
+        </p>
+        <p>Subpoblación: Toda célula viva con menos de 2 vecinas vivas, muere.</p>
+        <p>
+          Supervivencia: Toda célula viva con 2 o 3 vecinas vivas, sigue viva para la siguiente
+          generación.
+        </p>
+        <p>Sobrepoblación: Toda célula viva con más de 3 vecinas vivas, muere.</p>
+        <p>Reproducción: Toda célula muerta con exactamente 3 vecinas vivas, cobra vida.</p>
+        <p>
+          Objetivo: Crear un tablero en el navegador (ej: 20x20). Al cargar, algunas células deben iniciar
+          vivas de forma aleatoria. Debe haber un botón de &quot;Siguiente Generación&quot; que, al
+          hacerle clic, calcule y dibuje el nuevo estado del tablero basado en las reglas de Conway.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-panel" aria-labelledby="results-title">
+      <h2 id="results-title">Resultados</h2>
+      <div class="result-area result-area--large life-results" id="resultados" aria-live="polite">
+        <div class="life-board-viewport">
+          <div class="life-toolbar">
+            <h3>Matriz de células</h3>
+            <div class="life-controls" aria-label="Controles del tablero">
+              <button class="life-button life-button--primary" type="button" id="btn-empezar">
+                Empezar
+              </button>
+              <button class="life-button life-button--secondary" type="button" id="btn-reiniciar">
+                Reiniciar
+              </button>
+            </div>
+          </div>
+          <div
+            class="matriz-celulas"
+            id="matriz-celulas"
+            role="img"
+            aria-label="Matriz de células"
+          ></div>
+          <template id="plantilla-celula">
+            <div class="celula muerta"></div>
+          </template>
+        </div>
+      </div>
+    </section>
+
+    <nav class="exercise-navigation" aria-label="Navegación entre ejercicios">
+      <a href="../ejercicio-20/index.html">
+        <span>← Anterior · 20</span>
+        <strong>Retorno en un forEach</strong>
+      </a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Repaso JS</span>
+      <a href="../index.html">Volver al índice ↑</a>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
