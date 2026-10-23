@@ -1,15 +1,13 @@
 //Funciones
 
 //Función para crear cada célula y su estado (true o false)
-export function generarCelulas() {
-    const filas = 20;
-    const columnas = 30;
+export function generarCelulas(filas = 20, columnas = 30, porcentajeVivas = 50) {
     const totalCelulas = [];
 
     for (let i = 0; i < filas; i++) {
         totalCelulas[i] = [];
         for (let j = 0; j < columnas; j++) {
-            totalCelulas[i][j] = Math.random() < 0.5;
+            totalCelulas[i][j] = Math.random() < porcentajeVivas / 100;
         }
     }
 
@@ -44,6 +42,58 @@ export function dibujarCelulas(totalCelulas, matriz) {
     matriz.replaceChildren(fragmento);
     return nuevoEstado;
 }
+
+export function generarTableroConfigurado(
+    inputFilas,
+    inputColumnas,
+    inputPorcentajeVivas,
+    matriz
+) {
+    const filas = Number(inputFilas.value);
+    const columnas = Number(inputColumnas.value);
+    const porcentajeVivas = Number(inputPorcentajeVivas.value);
+    const celulas = generarCelulas(filas, columnas, porcentajeVivas);
+
+    return dibujarCelulas(celulas, matriz);
+}
+
+export function sincronizarNumerosConRangos(
+    inputFilas,
+    inputColumnas,
+    inputPorcentajeVivas,
+    valorFilas,
+    valorColumnas,
+    valorPorcentajeVivas
+) {
+    valorFilas.value = inputFilas.value;
+    valorColumnas.value = inputColumnas.value;
+    valorPorcentajeVivas.value = inputPorcentajeVivas.value;
+}
+
+export function sincronizarRangoDesdeNumero(inputNumero, inputRango) {
+    const valor = inputNumero.valueAsNumber;
+
+    if (!Number.isInteger(valor) || !inputNumero.validity.valid) {
+        return false;
+    }
+
+    inputRango.value = String(valor);
+    return true;
+}
+
+export function normalizarNumeroYRango(inputNumero, inputRango) {
+    const minimo = Number(inputRango.min);
+    const maximo = Number(inputRango.max);
+    const valorIngresado = inputNumero.valueAsNumber;
+    const valorBase = Number.isFinite(valorIngresado)
+        ? Math.round(valorIngresado)
+        : Number(inputRango.value);
+    const valorFinal = Math.min(maximo, Math.max(minimo, valorBase));
+
+    inputNumero.value = String(valorFinal);
+    inputRango.value = String(valorFinal);
+}
+
 //Función para conocer el estado de las células vecinas
 function evaluarVecinas(celulas, fil, col) {
     let vecinasVivas = [];

@@ -114,8 +114,18 @@
   font-weight: 650;
 }
 
-.life-setting__label-row output {
-  min-width: 42px;
+.life-setting__number-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--blue-deep);
+  font-size: 0.77rem;
+  font-weight: 700;
+}
+
+.life-setting__number {
+  width: 58px;
+  min-height: 28px;
   padding: 2px 8px;
   border: 1px solid #cbd9ea;
   border-radius: 7px;
@@ -124,6 +134,13 @@
   font-size: 0.77rem;
   font-weight: 700;
   text-align: center;
+  appearance: textfield;
+}
+
+.life-setting__number::-webkit-inner-spin-button,
+.life-setting__number::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
 }
 
 .life-setting input[type="range"] {
@@ -145,24 +162,33 @@
   display: grid;
   align-content: start;
   gap: 16px;
+  min-width: 0;
   max-width: 100%;
   overflow: auto;
   padding: clamp(12px, 2.5vw, 20px);
   border: 1px solid var(--line);
   border-radius: 12px;
   background: #f1f6fc;
+  container-type: inline-size;
 }
 
 .matriz-celulas {
-  --tamaño-celda: clamp(12px, 2vw, 24px);
-  --separación-celda: 2px;
+  --separación-celda: 1px;
   --filas: 20;
   --columnas: 20;
+  --ancho-celda: calc(
+    (100cqw - 6px - (var(--columnas) - 1) * var(--separación-celda)) / var(--columnas)
+  );
+  --alto-celda: calc(
+    (100vh - 86px - (var(--filas) - 1) * var(--separación-celda)) / var(--filas)
+  );
+  --tamaño-celda: clamp(1px, min(var(--ancho-celda), var(--alto-celda)), 24px);
   display: grid;
   grid-template-columns: repeat(var(--columnas), var(--tamaño-celda));
   grid-template-rows: repeat(var(--filas), var(--tamaño-celda));
   gap: var(--separación-celda);
   width: max-content;
+  max-width: 100%;
   margin-inline: auto;
   padding: var(--separación-celda);
   border: 1px solid #cbd9ea;
@@ -183,8 +209,9 @@
 .matriz-celulas > .celula {
   min-width: 0;
   min-height: 0;
-  border: 0px solid #000000;
-  border-radius: 0px;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 0;
   background: #000000;
   transition: background-color 120ms ease, border-color 120ms ease;
 }
@@ -193,7 +220,7 @@
   border-color: var(--blue-deep);
   background: var(--blue);
   border-radius: 50%;
-  border: 2px solid #032652;
+  border: 1px solid #032652;
 }
 
 .matriz-celulas > .celula.muerta {

@@ -94,46 +94,78 @@
             <div class="life-settings__grid">
               <div class="life-setting">
                 <div class="life-setting__label-row">
-                  <label for="cambiar-filas">Filas</label>
-                  <output id="filas-valor" for="cambiar-filas">20</output>
+                  <label for="filas-valor">Filas</label>
+                  <input
+                    class="life-setting__number"
+                    type="number"
+                    id="filas-valor"
+                    min="1"
+                    max="100"
+                    step="1"
+                    value="20"
+                    inputmode="numeric"
+                  >
                 </div>
                 <input
                   type="range"
                   id="cambiar-filas"
                   name="filas"
                   min="1"
-                  max="50"
+                  max="100"
                   step="1"
                   value="20"
+                  aria-label="Filas"
                 >
                 <div class="life-setting__limits" aria-hidden="true">
                   <span>1</span>
-                  <span>50</span>
+                  <span>100</span>
                 </div>
               </div>
               <div class="life-setting">
                 <div class="life-setting__label-row">
-                  <label for="cambiar-columnas">Columnas</label>
-                  <output id="columnas-valor" for="cambiar-columnas">30</output>
+                  <label for="columnas-valor">Columnas</label>
+                  <input
+                    class="life-setting__number"
+                    type="number"
+                    id="columnas-valor"
+                    min="1"
+                    max="100"
+                    step="1"
+                    value="30"
+                    inputmode="numeric"
+                  >
                 </div>
                 <input
                   type="range"
                   id="cambiar-columnas"
                   name="columnas"
                   min="1"
-                  max="50"
+                  max="100"
                   step="1"
                   value="30"
+                  aria-label="Columnas"
                 >
                 <div class="life-setting__limits" aria-hidden="true">
                   <span>1</span>
-                  <span>50</span>
+                  <span>100</span>
                 </div>
               </div>
               <div class="life-setting">
                 <div class="life-setting__label-row">
-                  <label for="porcentaje-vivas">Células vivas</label>
-                  <output id="porcentaje-vivas-valor" for="porcentaje-vivas">50%</output>
+                  <label for="porcentaje-vivas-valor">Células vivas</label>
+                  <span class="life-setting__number-wrap">
+                    <input
+                      class="life-setting__number"
+                      type="number"
+                      id="porcentaje-vivas-valor"
+                      min="0"
+                      max="100"
+                      step="1"
+                      value="50"
+                      inputmode="numeric"
+                    >
+                    <span aria-hidden="true">%</span>
+                  </span>
                 </div>
                 <input
                   type="range"
@@ -143,6 +175,7 @@
                   max="100"
                   step="1"
                   value="50"
+                  aria-label="Porcentaje de células vivas"
                 >
                 <div class="life-setting__limits" aria-hidden="true">
                   <span>0%</span>
