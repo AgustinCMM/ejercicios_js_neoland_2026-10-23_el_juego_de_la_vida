@@ -3,13 +3,13 @@
 //Función para crear cada célula y su estado (true o false)
 export function generarCelulas() {
     const filas = 20;
-    const columnas = 20;
+    const columnas = 30;
     const totalCelulas = [];
 
     for (let i = 0; i < filas; i++) {
         totalCelulas[i] = [];
         for (let j = 0; j < columnas; j++) {
-            totalCelulas[i][j] = Math.random() < 0.1;
+            totalCelulas[i][j] = Math.random() < 0.5;
         }
     }
 
@@ -25,19 +25,24 @@ export function generarCelulas() {
 //Función para mostrar en pantalla todas las células agregándolas a el contenedor de la matriz según su estado (viva o muerta)
 export function dibujarCelulas(totalCelulas, matriz) {
     const fragmento = document.createDocumentFragment();
+    let nuevoEstado = []
 
     totalCelulas.forEach((fila, indiceFila) => {
+        nuevoEstado[indiceFila] = [];
         fila.forEach((estadoVivo, indiceColumna) => {
+            nuevoEstado[indiceFila][indiceColumna] = [];
             const celula = document.createElement("div");
             celula.className = estadoVivo ? "celula viva" : "celula muerta";
             celula.id = `c-${indiceFila}-${indiceColumna}`;
 
             fragmento.appendChild(celula);
 
-            evaluarVecinas(totalCelulas, indiceFila, indiceColumna);
+            let vecinasVivas = evaluarVecinas(totalCelulas, indiceFila, indiceColumna);
+            nuevoEstado[indiceFila][indiceColumna] = evaluarCondiciones(estadoVivo, vecinasVivas);
         });
     });
     matriz.replaceChildren(fragmento);
+    return nuevoEstado;
 }
 //Función para conocer el estado de las células vecinas
 function evaluarVecinas(celulas, fil, col) {
@@ -71,7 +76,7 @@ function evaluarVecinas(celulas, fil, col) {
     return vecinasVivas;
 }
 //Función para evaluar los estados de las células y aplicar la actualización de su estado
-export function evaluarCondiciones(celulas, vecinasVivas) {
+function evaluarCondiciones(celulas, vecinasVivas) {
     let c = celulas;
     let v = vecinasVivas;
     const viva = true;
