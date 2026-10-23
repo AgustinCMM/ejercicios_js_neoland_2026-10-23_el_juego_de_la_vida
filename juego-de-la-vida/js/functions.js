@@ -22,16 +22,12 @@ export function generarCelulas() {
 }
 
 export function dibujarCelulas(totalCelulas, matriz) {
-    const plantilla = document.getElementById("plantilla-celula");
     const fragmento = document.createDocumentFragment();
 
     totalCelulas.forEach((fila) => {
         fila.forEach((estadoVivo) => {
-            const celula = plantilla.content.firstElementChild.cloneNode(true);
-
-            if (estadoVivo) {
-                celula.classList.replace("muerta", "viva");
-            }
+            const celula = document.createElement("div");
+            celula.className = estadoVivo ? "celula viva" : "celula muerta";
 
             fragmento.appendChild(celula);
         });
