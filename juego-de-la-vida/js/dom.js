@@ -7,7 +7,12 @@ import {
 
 export function inicializarApp() {
     const matriz = document.getElementById("matriz-celulas");
-
+    const btnEmpezar = document.getElementById("btn-empezar");
+    const btnReiniciar = document.getElementById("btn-reiniciar");
+    //Variable que contiene la matriz bidimensional con todas las células con valor true o false
     let celulas = generarCelulas();
-    dibujarCelulas(celulas, matriz);
+
+    btnEmpezar.addEventListener('click', ()=> {
+        dibujarCelulas(celulas, matriz);
+    })
 }
