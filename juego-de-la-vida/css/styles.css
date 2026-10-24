@@ -192,8 +192,9 @@
   margin-inline: auto;
   padding: var(--separación-celda);
   border: 1px solid #cbd9ea;
-  border-radius: 10px;
+  border-radius: 1.5vw;
   background-color: #000000;
+  overflow: hidden;
 }
 
 .matriz-celulas[class*="matriz-celulas--"] {
